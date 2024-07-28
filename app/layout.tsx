@@ -5,7 +5,7 @@ import "./globals.css";
 const font = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SHELFMATES",
+  title: "shelfmates",
   description: "",
 };
 
