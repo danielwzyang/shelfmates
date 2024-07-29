@@ -5,11 +5,9 @@ import Product from "@/components/product"
 import products from "../../products.json" with { type: "json" }
 
 export default function App() {
-    var value = ""
+    var value = undefined
     if (typeof window !== "undefined") {
-        if (document.cookie != "") {
-            document.cookie.split("; ").find(row => row.startsWith('"likes"='))
-        }
+        value = document.cookie.split("; ").find(row => row.startsWith('"likes"='))
     }
     value = value ? value.split("=")[1] : ""
 
