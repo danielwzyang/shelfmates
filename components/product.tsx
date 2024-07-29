@@ -11,7 +11,7 @@ export default function Product (props: Props) {
         className="mt-[20px] mx-[10px] 
         2xl:w-[250px] lg:w-[300px] md:w-[350px] sm:w-[600px]
         2xl:h-[300px] lg:h-[360px] md:h-[420px] sm:h-[720px]
-        border border-[#e0e0e0] rounded-3xl flex justify-center">
+        border border-[#e0e0e0] rounded-3xl flex justify-center bg-white">
             <img src={products[props.id]["image"]} alt={props.id} className="m-[10%] w-[60%] h-[60%] object-contain"/>
         </a>
     )
