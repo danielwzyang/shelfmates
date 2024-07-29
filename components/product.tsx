@@ -1,4 +1,3 @@
-/** @jest-environment jsdom */
 "use client"
 
 import React from "react"
@@ -11,7 +10,7 @@ export interface Props {
 
 export default function Product(props: Props) {
     const [liked, updateLikes] = React.useState(() => {
-        if (typeof window !== undefined) {
+        if (typeof window !== "undefined") {
             if (document.cookie == "") {
                 return false
             } else {

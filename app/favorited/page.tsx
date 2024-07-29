@@ -1,4 +1,3 @@
-/** @jest-environment jsdom */
 "use client"
 
 import Navbar from "@/components/navbar"
@@ -7,7 +6,7 @@ import products from "../../products.json" with { type: "json" }
 
 export default function App() {
     var value = ""
-    if (typeof window !== undefined) {
+    if (typeof window !== "undefined") {
         if (document.cookie != "") {
             document.cookie.split("; ").find(row => row.startsWith('"likes"='))
         }
