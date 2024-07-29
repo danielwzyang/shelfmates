@@ -1,6 +1,7 @@
+/** @jest-environment jsdom */
 "use client"
 
-import React, { useState } from "react"
+import React from "react"
 import products from "../products.json" with { type: "json" }
 
 

@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 "use client"
 
 import Navbar from "@/components/navbar"
