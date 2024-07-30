@@ -24,9 +24,11 @@ export default function Rating(props: ratingProps) {
     while (starArray.length < 5) {
         starArray.push(<Star value={0} key={5 - starArray.length} />)
     }
-    return <div className="w-[30%] flex gap-[2%]">
+    return <div className="w-[55%] items-center flex gap-[2%]">
+        <h1 className="text-base pt-[2%] px-[2%] lg:text-sm sm:text-base">{products[props.id]["rating"]}</h1>
         {
             starArray
         }
+        <h1 className="text-base pt-[2%] px-[2%] lg:text-sm sm:text-base">{products[props.id]["reviews"]}</h1>
     </div>
 }

@@ -52,14 +52,14 @@ export default function Product(props: productProps) {
             </div>
             <img src={products[props.id]["image"]} alt={props.id} className="mx-[20%] w-[60%] h-[60%] object-contain" />
 
-            <div className="flex flex-col h-[15%] justify-center items-center text-sm font-bold">
+            <div className="flex flex-col h-[13%] my-[2%] justify-center items-center font-bold text-xl lg:text-sm sm:text-lg">
                 <h1>{"$" + String(products[props.id]["price"].toFixed(2))}</h1>
                 <Rating id={props.id} />
             </div>
 
-            <div className="relative w-full h-[13%]">
+            <div className="relative w-full h-[12%]">
 
-                <a href={"https://amazon.com/dp/" + props.id} target="_blank" className="absolute right-[5%] bottom-[30%] w-fit bg-[#e5e5e5] px-[3%] rounded-xl border font-bold lg:text-sm">
+                <a href={"https://amazon.com/dp/" + props.id} target="_blank" className="absolute right-[5%] bottom-[30%] w-fit bg-[#e5e5e5] px-[3%] rounded-xl border font-bold lg:text-sm sm:text-lg">
                     buy
                 </a>
             </div>
