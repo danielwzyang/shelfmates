@@ -4,12 +4,17 @@ import React from "react"
 import products from "../products.json" with { type: "json" }
 import Rating from "./rating"
 import { useCookies } from "next-client-cookies"
+import { useDoubleTap } from "use-double-tap"
 
 export interface productProps {
     id: keyof typeof products
 }
 
 export default function Product(props: productProps) {
+    const bind = useDoubleTap(() => {
+        like()
+    })
+
     const cookies = useCookies()
 
     const [favorited, updateFavorites] = React.useState(() => {
@@ -36,7 +41,7 @@ export default function Product(props: productProps) {
     }
 
     return (
-        <div className="mt-[20px] mx-[10px] 
+        <div {...bind} className="mt-[20px] mx-[10px] 
         2xl:w-[250px] lg:w-[300px] md:w-[350px] sm:w-[400px] w-[350px]
         2xl:h-[300px] lg:h-[360px] md:h-[420px] sm:h-[480px] h-[420px]
         border border-[#e0e0e0] rounded-3xl flex-col justify-center bg-white">
