@@ -82,7 +82,7 @@ export default function Product(props: productProps) {
         2xl:w-[250px] lg:w-[300px] md:w-[350px] sm:w-[400px] w-[350px]
         2xl:h-[350px] lg:h-[420px] md:h-[504px] sm:h-[576px] h-[504px]
         border border-[#e0e0e0] rounded-3xl flex items-center justify-center bg-white">
-                <button onClick={() => { flip(!isFlipped) }} className="mt-[5%] absolute right-[10%] top-[0%] w-[20px] scale-x-[-1]">
+                <button onClick={() => { flip(!isFlipped) }} className="mt-[5%] absolute right-[10%] top-[0%] w-[7%] scale-x-[-1]">
                     <svg fill="#000000" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="12.71 0 193.84 219.27">
                         <path d="m110.57 28.285 19.418 19.418h-31.492c-47.301 0-85.783 38.482-85.783 85.783 0 47.302 38.483 85.783 85.783 85.783v-40c-25.245 0-45.783-20.539-45.783-45.783 0-25.245 20.538-45.783 45.783-45.783h31.492l-19.417 19.417 28.283 28.284 67.703-67.701-67.702-67.703-28.285 28.285z"></path>
                     </svg>
