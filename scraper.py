@@ -83,6 +83,7 @@ while True:
         
         ## input image link
         image = input("\t\033[4mimage link\033[0m: ")
+        backimage = input("\t\033[4mimage link\033[0m: ")
 
         data[id] = {
             "name": name,
@@ -91,6 +92,7 @@ while True:
             "rating": rating,
             "reviews": reviews,
             "image": image,
+            "back_image": backimage,
         }
     else:
         print("failed to get page")
