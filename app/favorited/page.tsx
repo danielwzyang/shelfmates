@@ -3,17 +3,14 @@
 import Navbar from "@/components/navbar"
 import Product from "@/components/product"
 import products from "../../products.json" with { type: "json" }
+import { useCookies } from "next-client-cookies"
 
 export default function App() {
-    var value = undefined
-    if (typeof window !== "undefined") {
-        value = document.cookie.split("; ").find(row => row.startsWith('"likes"='))
-    }
-    value = value ? value.split("=")[1] : ""
-
-    var productList = value.split(",").filter((e) => e != "").map((e, i) => {
+    const cookies = useCookies()
+    var cookie = cookies.get("favorited")
+    var productList = cookie ? cookie.split(",").filter((e) => e != "").map((e, i) => {
         return <Product id={e as keyof typeof products} key={i} />
-    })
+    }) : []
 
     return (
         <div>

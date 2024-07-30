@@ -130,16 +130,5 @@
         "rating": 4.6,
         "reviews": 48,
         "image": "https://m.media-amazon.com/images/I/71znvbP-YDL._AC_SX679_.jpg"
-    },
-    "B08WWM1V6X": {
-        "name": "Dreams Smiski Glow in The Dark Figure, Toilet Series, Random Style, 1 Pack",
-        "price": 15.9,
-        "dimensions": [
-            3.23,
-            2.32,
-            2.05
-        ],
-        "reviews": 61,
-        "image": "https://m.media-amazon.com/images/I/51aJEMLO3CL._AC_SX679_.jpg"
     }
 }
