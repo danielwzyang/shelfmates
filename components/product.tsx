@@ -36,13 +36,13 @@ export default function Product(props: productProps) {
 
         if (!favorited) {
             if (!value.includes(String(props.id))) {
-                value += String(props.id) + ","
+                value = String(props.id) + "," + value
             }
         } else {
             value = value.replace(String(props.id) + ",", "")
         }
         console.log(value)
-        cookies.set("favorited", value)
+        cookies.set("favorited", value, { expires: 2147483647 })
         updateFavorites(!favorited)
     }
 
