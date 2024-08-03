@@ -1,16 +1,14 @@
-"use client"
-
 import Navbar from "@/components/navbar"
 import Product from "@/components/product"
 import products from "../../products.json" with { type: "json" }
-import { useCookies } from "next-client-cookies"
+import { cookies } from "next/headers"
 
 export default function App() {
-    const cookies = useCookies()
-    var cookie = cookies.get("favorited")
-    var productList = cookie ? cookie.split(",").filter((e) => e != "").map((e, i) => {
-        return <Product id={e as keyof typeof products} key={i} />
-    }) : []
+    var cookieStore = cookies()
+    var favorited = cookieStore.get("favorited")?.value ?? ""
+    var productList = favorited.split(",").filter((e) => e != "").map((e, i) => {
+        return <Product id={e as keyof typeof products} key={i} liked={favorited.includes(String(e))} />
+    })
 
     return (
         <div>
