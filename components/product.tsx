@@ -39,8 +39,10 @@ export default function Product(props: productProps) {
                         <path d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z" stroke="#000000" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <button onClick={() => { flip(!isFlipped) }} className="absolute right-[10%] w-[7%] ">
-                        <svg fill="#000000" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="12.71 0 193.84 219.27">
-                            <path d="m110.57 28.285 19.418 19.418h-31.492c-47.301 0-85.783 38.482-85.783 85.783 0 47.302 38.483 85.783 85.783 85.783v-40c-25.245 0-45.783-20.539-45.783-45.783 0-25.245 20.538-45.783 45.783-45.783h31.492l-19.417 19.417 28.283 28.284 67.703-67.701-67.702-67.703-28.285 28.285z"></path>
+                        <svg version="1.1" viewBox="12.71 0 193.84 219.27" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m206.56 67.703h-199" fill="#ffcb00" stroke-linecap="round" stroke-width="30" />
+                            <path d="m124.29 14.94 53.347 53.347-53.346 53.346" fill="none" stroke="#000" stroke-linecap="round" stroke-width="30" />
+                            <path d="m177.64 68.287h-70.932s-69.847-4.6378-72.67 68.286c0.51327 5.4294 0.48278 56.692 64.143 62.755" fill="none" stroke="#000" stroke-linecap="round" stroke-width="30" />
                         </svg>
                     </button>
                 </div>
@@ -65,8 +67,10 @@ export default function Product(props: productProps) {
         2xl:h-[350px] lg:h-[420px] md:h-[504px] sm:h-[576px] h-[504px]
         border border-[#e0e0e0] rounded-3xl flex items-center justify-center bg-white">
                 <button onClick={() => { flip(!isFlipped) }} className="mt-[5%] absolute right-[10%] top-[0%] w-[7%] scale-x-[-1]">
-                    <svg fill="#000000" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="12.71 0 193.84 219.27">
-                        <path d="m110.57 28.285 19.418 19.418h-31.492c-47.301 0-85.783 38.482-85.783 85.783 0 47.302 38.483 85.783 85.783 85.783v-40c-25.245 0-45.783-20.539-45.783-45.783 0-25.245 20.538-45.783 45.783-45.783h31.492l-19.417 19.417 28.283 28.284 67.703-67.701-67.702-67.703-28.285 28.285z"></path>
+                    <svg version="1.1" viewBox="12.71 0 193.84 219.27" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m206.56 67.703h-199" fill="#ffcb00" stroke-linecap="round" stroke-width="30" />
+                        <path d="m124.29 14.94 53.347 53.347-53.346 53.346" fill="none" stroke="#000" stroke-linecap="round" stroke-width="30" />
+                        <path d="m177.64 68.287h-70.932s-69.847-4.6378-72.67 68.286c0.51327 5.4294 0.48278 56.692 64.143 62.755" fill="none" stroke="#000" stroke-linecap="round" stroke-width="30" />
                     </svg>
                 </button>
                 <h1 className="absolute bottom-[10%] font-bold text-base lg:text-sm sm:text-lg">{products[props.id]["dimensions"].join(" in x ") + " in"}</h1>
