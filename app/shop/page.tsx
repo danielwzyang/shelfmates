@@ -1,15 +1,36 @@
+"use client"
+
 import Navbar from "@/components/navbar"
 import Product from "@/components/product"
 import products from "../../products.json" with { type: "json" }
-import { cookies } from "next/headers"
+import { useEffect, useState } from "react"
+import { getFavorited } from "@/components/cookies"
 
 export default function App() {
-    var cookieStore = cookies()
-    var favorited = cookieStore.get("favorited")?.value ?? ""
-    
+    const [favorites, updateFavorites] = useState([])
     var productList = Object.keys(products).sort().map((e, i) => {
-        return <Product id={e as keyof typeof products} key={i} liked={favorited.includes(String(e))} />
+        return <Product id={e as keyof typeof products} key={i} startingValue={favorites.includes(String(e))} />
     })
+
+    function update(favoriteProducts) {
+        updateFavorites(favoriteProducts)
+        productList = Object.keys(products).sort().map((e, i) => {
+            return <Product id={e as keyof typeof products} key={i} startingValue={favoriteProducts.includes(String(e))} />
+        })
+    }
+
+    useEffect(() => {
+        const fetchFavorited = async () => {
+            try {
+                const favorited = await getFavorited()
+                const favoriteProducts = favorited.split(",").filter((e) => e != "")
+                update(favoriteProducts)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchFavorited()
+    }, [])
 
     return (
         <div>

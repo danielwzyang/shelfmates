@@ -1,15 +1,37 @@
+"use client"
+
 import Navbar from "@/components/navbar"
 import Product from "@/components/product"
 import products from "../../products.json" with { type: "json" }
-import { cookies } from "next/headers"
+import { getFavorited } from "@/components/cookies"
+import { useState, useEffect } from "react"
 
 export default function App() {
-    var cookieStore = cookies()
-    var favorited = cookieStore.get("favorited")?.value ?? ""
-    var productList = favorited.split(",").filter((e) => e != "").map((e, i) => {
-        return <Product id={e as keyof typeof products} key={i} liked={favorited.includes(String(e))} />
+    const [favorites, updateFavorites] = useState([])
+    var productList = favorites.map((e, i) => {
+        return <Product id={e as keyof typeof products} key={i} startingValue={favorites.includes(String(e))} />
     })
 
+    function update(favoriteProducts) {
+        updateFavorites(favoriteProducts)
+        productList = favoriteProducts.map((e, i) => {
+            return <Product id={e as keyof typeof products} key={i} startingValue={favoriteProducts.includes(String(e))} />
+        })
+    }
+
+    useEffect(() => {
+        const fetchFavorited = async () => {
+            try {
+                const favorited = await getFavorited()
+                const favoriteProducts = favorited.split(",").filter((e) => e != "")
+                update(favoriteProducts)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchFavorited()
+    }, [])
+    
     return (
         <div>
             <Navbar page="favorited" />

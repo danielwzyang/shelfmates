@@ -1,6 +1,7 @@
 "use server"
 import { cookies } from "next/headers"
 
+
 export async function like(id: string) {
     var cookieStore = cookies()
     var favorited = cookieStore.get("favorited")?.value ?? ""
@@ -10,5 +11,11 @@ export async function like(id: string) {
     } else {
         favorited = favorited.replace(id + ",", "")
     }
-    cookieStore.set("favorited", favorited, { expires: 2147483647 })
+    cookieStore.set("favorited", favorited, { maxAge: 34560000 })
+}
+
+export async function getFavorited() {
+    var cookieStore = cookies()
+    var favorited = cookieStore.get("favorited")?.value ?? ""
+    return favorited
 }
