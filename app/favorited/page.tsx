@@ -7,12 +7,12 @@ import { getFavorited } from "@/components/cookies"
 import { useState, useEffect } from "react"
 
 export default function App() {
-    const [favorites, updateFavorites] = useState([])
+    const [favorites, updateFavorites] = useState<string[]>([])
     var productList = favorites.map((e, i) => {
         return <Product id={e as keyof typeof products} key={i} startingValue={favorites.includes(String(e))} />
     })
 
-    function update(favoriteProducts) {
+    function update(favoriteProducts: string[]) {
         updateFavorites(favoriteProducts)
         productList = favoriteProducts.map((e, i) => {
             return <Product id={e as keyof typeof products} key={i} startingValue={favoriteProducts.includes(String(e))} />

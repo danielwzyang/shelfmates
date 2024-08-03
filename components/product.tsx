@@ -6,7 +6,6 @@ import Rating from "./rating"
 import { like } from "./cookies"
 import { useDoubleTap } from "use-double-tap"
 import ReactCardFlip from "react-card-flip"
-import { getFavorited } from "./cookies"
 
 export interface productProps {
     id: keyof typeof products,
