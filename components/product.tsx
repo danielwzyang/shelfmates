@@ -22,7 +22,7 @@ export default function Product(props: productProps) {
             updateLike(props.startingValue)
             load(true)
         }
-    })
+    }, [loaded, props.startingValue])
 
     const bind = useDoubleTap(() => {
         like(String(props.id))
@@ -46,7 +46,7 @@ export default function Product(props: productProps) {
                         </svg>
                     </button>
                 </div>
-                <img src={products[props.id]["image"]} alt={props.id} className="mx-[20%] w-[60%] h-[60%] object-contain" />
+                <img src={products[props.id]["image"]} alt={props.id + " cover image"} className="mx-[20%] w-[60%] h-[60%] object-contain" />
 
                 <div className="flex flex-col h-[12%] my-[6%] justify-center items-center font-bold text-base lg:text-sm sm:text-lg">
                     <h1>{"$" + String(products[props.id]["price"].toFixed(2))}</h1>
@@ -68,13 +68,13 @@ export default function Product(props: productProps) {
         border border-[#e0e0e0] rounded-3xl flex items-center justify-center bg-white">
                 <button onClick={() => { flip(!isFlipped) }} className="mt-[5%] absolute right-[10%] top-[0%] w-[7%] scale-x-[-1]">
                     <svg version="1.1" viewBox="12.71 0 193.84 219.27" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m206.56 67.703h-199" fill="#ffcb00" stroke-linecap="round" stroke-width="30" />
-                        <path d="m124.29 14.94 53.347 53.347-53.346 53.346" fill="none" stroke="#000" stroke-linecap="round" stroke-width="30" />
-                        <path d="m177.64 68.287h-70.932s-69.847-4.6378-72.67 68.286c0.51327 5.4294 0.48278 56.692 64.143 62.755" fill="none" stroke="#000" stroke-linecap="round" stroke-width="30" />
+                        <path d="m206.56 67.703h-199" fill="#ffcb00" strokeLinecap="round" strokeWidth="30" />
+                        <path d="m124.29 14.94 53.347 53.347-53.346 53.346" fill="none" stroke="#000" strokeLinecap="round" strokeWidth="30" />
+                        <path d="m177.64 68.287h-70.932s-69.847-4.6378-72.67 68.286c0.51327 5.4294 0.48278 56.692 64.143 62.755" fill="none" stroke="#000" strokeLinecap="round" strokeWidth="30" />
                     </svg>
                 </button>
                 <h1 className="absolute bottom-[10%] font-bold text-base lg:text-sm sm:text-lg">{products[props.id]["dimensions"].join(" in x ") + " in"}</h1>
-                <img src={products[props.id]["backimage"]} className="mx-[10%] h-fit w-[80%] object-contain border border-[2px] rounded-xl" />
+                <img src={products[props.id]["backimage"]} alt={props.id + " back image"} className="mx-[10%] h-fit w-[80%] object-contain border border-[2px] rounded-xl"/>
             </div>
         </ReactCardFlip>
     )
