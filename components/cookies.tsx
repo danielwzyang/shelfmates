@@ -1,7 +1,6 @@
 "use server"
 import { cookies } from "next/headers"
 
-
 export async function like(id: string) {
     var cookieStore = cookies()
     var favorited = cookieStore.get("favorited")?.value ?? ""
