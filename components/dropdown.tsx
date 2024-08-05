@@ -20,7 +20,7 @@ export default function Dropdown(props: DropdownProps) {
     }
 
     return <div className="w-[8rem]" ref={ref}>
-        <div onClick={toggle} className="flex justify-center items-center gap-[0.3rem] px-[0.5rem] py-[0.2rem] border rounded-lg bg-white hover:bg-[#e6e6e6] text-sm">
+        <div onClick={toggle} className="flex justify-center items-center gap-[0.3rem] px-[0.5rem] py-[0.2rem] border rounded-lg bg-white hover:bg-[#e6e6e6] text-base lg:text-sm sm:text-lg">
             <h1 className="font-semibold">
                 {props.header}
             </h1>
@@ -31,7 +31,7 @@ export default function Dropdown(props: DropdownProps) {
         <div className={"border rounded-lg bg-white absolute flex flex-col z-10" + (opened ? "" : " hidden")} >
             {
                 props.list.map((e, i) => {
-                    return <h1 className={"rounded-lg text-sm hover:bg-[#e6e6e6] text-left px-[1rem] py-[0.1rem] w-full" + (props.state == e ? " font-semibold" : "")} 
+                    return <h1 className={"rounded-lg text-base lg:text-sm sm:text-lg hover:bg-[#e6e6e6] text-left px-[1rem] py-[0.1rem] w-full" + (props.state == e ? " font-semibold" : "")} 
                     onClick={() => {props.func(e); setOpened(false)}} key={i}>{e}</h1>
                 })
             }
