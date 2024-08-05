@@ -1,5 +1,5 @@
 import { useClickAway } from "@uidotdev/usehooks"
-import { useState } from "react"
+import { LegacyRef, useState } from "react"
 
 export interface DropdownProps {
     header: string,
@@ -11,7 +11,7 @@ export interface DropdownProps {
 export default function Dropdown(props: DropdownProps) {
     const [opened, setOpened] = useState(false)
 
-    const ref = useClickAway(() => {
+    const ref = useClickAway<HTMLDivElement>(() => {
         setOpened(false)
     })
 
