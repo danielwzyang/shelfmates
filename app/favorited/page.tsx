@@ -9,10 +9,12 @@ import Dropdown from "@/components/dropdown"
 
 export default function App() {
     const [favorites, updateFavorites] = useState<string[]>([])
-    const [sortBy, changeSort] = useState("Recently Favorited")
+    const [sortBy, changeSort] = useState("Recency")
 
     function sortProducts(a: string, b: string) {
         switch (sortBy) {
+            case "Recency":
+                return 0
             case "Rating":
                 if (products[a as keyof typeof products]["rating"] < products[b as keyof typeof products]["rating"]) {
                     return 1
@@ -36,7 +38,7 @@ export default function App() {
                     return -1
                 }
                 return 0
-            case "Cheapest":
+            case "Price (Low)":
                 if (products[a as keyof typeof products]["price"] < products[b as keyof typeof products]["price"]) {
                     return -1
                 }
@@ -56,21 +58,15 @@ export default function App() {
         return 0
     }
 
-    var productList = sortBy != "Recently Favorited" ? [...favorites].sort(sortProducts).map((e, i) => {
+    var productList = [...favorites].sort(sortProducts).map((e, i) => {
         return <Product id={e as keyof typeof products} key={i} startingValue={favorites.includes(String(e))} />
-    }) :
-        favorites.map((e, i) => {
-            return <Product id={e as keyof typeof products} key={i} startingValue={favorites.includes(String(e))} />
-        })
+    })
 
     function update(favoriteProducts: string[]) {
         updateFavorites(favoriteProducts)
-        productList = sortBy != "Recently Favorited" ? [...favorites].sort(sortProducts).map((e, i) => {
+        productList = [...favorites].sort(sortProducts).map((e, i) => {
             return <Product id={e as keyof typeof products} key={i} startingValue={favorites.includes(String(e))} />
-        }) :
-            favorites.map((e, i) => {
-                return <Product id={e as keyof typeof products} key={i} startingValue={favorites.includes(String(e))} />
-            })
+        })
     }
 
     useEffect(() => {
@@ -90,7 +86,7 @@ export default function App() {
         <div>
             <Navbar page="favorited" />
             <div className="w-full flex justify-center mt-[10px]">
-                <Dropdown header="Sort by:" list={["Recently Favorited", "Cheapest", "Most Expensive", "Rating", "# of Reviews"]} state={sortBy} func={changeSort} />
+                <Dropdown header="Sort by:" list={["Recency", "Price (Low)", "Price (High)", "Rating", "# of Reviews"]} state={sortBy} func={changeSort} />
             </div>
 
             <div className="flex justify-center pb-[40px] min-h-full">

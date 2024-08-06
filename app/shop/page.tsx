@@ -44,7 +44,7 @@ export default function App() {
                     return -1
                 }
                 return 0
-            case "Cheapest":
+            case "Price (Low)":
                 if (products[a as keyof typeof products]["price"] < products[b as keyof typeof products]["price"]) {
                     return -1
                 }
@@ -52,7 +52,7 @@ export default function App() {
                     return 1
                 }
                 return 0
-            case "Most Expensive":
+            case "Price (High)":
                 if (products[a as keyof typeof products]["price"] < products[b as keyof typeof products]["price"]) {
                     return 1
                 }
@@ -94,7 +94,7 @@ export default function App() {
         <div>
             <Navbar page="shop" />
             <div className="w-full flex justify-center mt-[10px]">
-                <Dropdown header="Sort by:" list={["Amazon ID", "Cheapest", "Most Expensive", "Rating", "# of Reviews"]} state={sortBy} func={changeSort} />
+                <Dropdown header="Sort by:" list={["Amazon ID", "Price (Low)", "Price (High)", "Rating", "# of Reviews"]} state={sortBy} func={changeSort} />
             </div>
             <div className="flex justify-center">
                 <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
