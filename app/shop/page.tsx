@@ -64,7 +64,7 @@ export default function App() {
         return 0
     }
 
-    var productList = Object.keys(products).sort(sortProducts).map((e, i) => {
+    var productList = [...Object.keys(products)].sort(sortProducts).map((e, i) => {
         return <Product id={e as keyof typeof products} key={i} startingValue={favorites.includes(String(e))} />
     })
 

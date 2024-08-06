@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mui/material": "^5.16.6",
     "@uidotdev/usehooks": "^2.4.1",
     "next": "14.2.5",
     "react": "^18",
