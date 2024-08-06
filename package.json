@@ -9,9 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mui/material": "^5.16.6",
     "@uidotdev/usehooks": "^2.4.1",
+    "js-cookie": "^3.0.5",
     "next": "14.2.5",
+    "next-client-cookies": "^1.1.1",
     "react": "^18",
     "react-card-flip": "^1.2.3",
     "react-dom": "^18",

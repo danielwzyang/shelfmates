@@ -3,17 +3,44 @@
 import Navbar from "@/components/navbar"
 import Product from "@/components/product"
 import products from "../../products.json" with { type: "json" }
-import { getFavorited } from "@/components/cookies"
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import Dropdown from "@/components/dropdown"
+import { useCookies } from "next-client-cookies"
 
 export default function App() {
-    const [favorites, updateFavorites] = useState<string[]>([])
+    var cookies = useCookies()
+    var favorited = cookies.get("favorited")?.split(",").filter((e) => { return e != "" }) ?? []
+
     const [sortBy, changeSort] = useState("Recency")
+    const [productList, changeList] = useState(favorited.map((e, i) => {
+        return <Product id={e as keyof typeof products} key={i} />
+    }))
+
+    useEffect(() => {
+        changeList(favorited.sort(sortProducts).map((e, i) => {
+            return <Product id={e as keyof typeof products} key={i} />
+        }))
+    }, [sortBy])
 
     function sortProducts(a: string, b: string) {
         switch (sortBy) {
             case "Recency":
+                return 0
+            case "Price (Low)":
+                if (products[a as keyof typeof products]["price"] < products[b as keyof typeof products]["price"]) {
+                    return -1
+                }
+                if (products[a as keyof typeof products]["price"] > products[b as keyof typeof products]["price"]) {
+                    return 1
+                }
+                return 0
+            case "Price (High)":
+                if (products[a as keyof typeof products]["price"] < products[b as keyof typeof products]["price"]) {
+                    return 1
+                }
+                if (products[a as keyof typeof products]["price"] > products[b as keyof typeof products]["price"]) {
+                    return -1
+                }
                 return 0
             case "Rating":
                 if (products[a as keyof typeof products]["rating"] < products[b as keyof typeof products]["rating"]) {
@@ -22,7 +49,6 @@ export default function App() {
                 if (products[a as keyof typeof products]["rating"] > products[b as keyof typeof products]["rating"]) {
                     return -1
                 }
-                // sorts by review if the rating is the same
                 if (products[a as keyof typeof products]["reviews"] < products[b as keyof typeof products]["reviews"]) {
                     return 1
                 }
@@ -38,49 +64,9 @@ export default function App() {
                     return -1
                 }
                 return 0
-            case "Price (Low)":
-                if (products[a as keyof typeof products]["price"] < products[b as keyof typeof products]["price"]) {
-                    return -1
-                }
-                if (products[a as keyof typeof products]["price"] > products[b as keyof typeof products]["price"]) {
-                    return 1
-                }
-                return 0
-            case "Most Expensive":
-                if (products[a as keyof typeof products]["price"] < products[b as keyof typeof products]["price"]) {
-                    return 1
-                }
-                if (products[a as keyof typeof products]["price"] > products[b as keyof typeof products]["price"]) {
-                    return -1
-                }
-                return 0
         }
         return 0
     }
-
-    var productList = [...favorites].sort(sortProducts).map((e, i) => {
-        return <Product id={e as keyof typeof products} key={i} startingValue={favorites.includes(String(e))} />
-    })
-
-    function update(favoriteProducts: string[]) {
-        updateFavorites(favoriteProducts)
-        productList = [...favorites].sort(sortProducts).map((e, i) => {
-            return <Product id={e as keyof typeof products} key={i} startingValue={favorites.includes(String(e))} />
-        })
-    }
-
-    useEffect(() => {
-        const fetchFavorited = async () => {
-            try {
-                const favorited = await getFavorited()
-                const favoriteProducts = favorited.split(",").filter((e) => e != "")
-                update(favoriteProducts)
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        fetchFavorited()
-    }, [])
 
     return (
         <div>
@@ -88,7 +74,6 @@ export default function App() {
             <div className="w-full flex justify-center mt-[10px]">
                 <Dropdown header="Sort by:" list={["Recency", "Price (Low)", "Price (High)", "Rating", "# of Reviews"]} state={sortBy} func={changeSort} />
             </div>
-
             <div className="flex justify-center pb-[40px] min-h-full">
                 {
                     productList.length > 0 ?

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import { CookiesProvider } from "next-client-cookies/server";
 
 
 const font = DM_Sans({ subsets: ["latin"] });
@@ -17,7 +18,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={font.className}>{children}</body>
+            <body className={font.className}>
+                <CookiesProvider>
+                    {children}
+                </CookiesProvider>
+            </body>
         </html>
     );
 }
