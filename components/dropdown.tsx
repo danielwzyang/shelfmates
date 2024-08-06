@@ -1,5 +1,5 @@
 import { useClickAway } from "@uidotdev/usehooks"
-import { LegacyRef, useState } from "react"
+import { useState } from "react"
 
 export interface DropdownProps {
     header: string,

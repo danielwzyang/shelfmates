@@ -92,7 +92,7 @@ while True:
             "rating": rating,
             "reviews": reviews,
             "image": image,
-            "back_image": backimage,
+            "backimage": backimage,
         }
     else:
         print("failed to get page")

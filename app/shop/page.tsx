@@ -28,6 +28,13 @@ export default function App() {
                 if (products[a as keyof typeof products]["rating"] > products[b as keyof typeof products]["rating"]) {
                     return -1
                 }
+                // sorts by review if the rating is the same
+                if (products[a as keyof typeof products]["reviews"] < products[b as keyof typeof products]["reviews"]) {
+                    return 1
+                }
+                if (products[a as keyof typeof products]["reviews"] > products[b as keyof typeof products]["reviews"]) {
+                    return -1
+                }
                 return 0
             case "# of Reviews":
                 if (products[a as keyof typeof products]["reviews"] < products[b as keyof typeof products]["reviews"]) {
