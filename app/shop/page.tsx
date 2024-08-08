@@ -12,7 +12,7 @@ export default function App() {
     const [productList, changeList] = useState([...Object.keys(products)].sort(sortProducts).map((e, i) => {
         return <Product id={e as keyof typeof products} key={i} />
     }))
-    const [priceFilter, changePriceFilter] = useState<number[]>([10, 20])
+    const [priceFilter, changePriceFilter] = useState<number[]>([5, 25])
 
     useEffect(() => {
         changeList([...Object.keys(products)].sort(sortProducts).filter((e) => {
@@ -75,16 +75,6 @@ export default function App() {
         }
         return 0
     }
-
-    /*
-    <div className="relative">
-                    <svg className="w-[10px] absolute top-[3px] right-[0px]" fill="none" viewBox="4.49 4.51 15 15" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.207 6.207a1 1 0 0 0-1.414-1.414L12 10.586 6.207 4.793a1 1 0 0 0-1.414 1.414L10.586 12l-5.793 5.793a1 1 0 1 0 1.414 1.414L12 13.414l5.793 5.793a1 1 0 0 0 1.414-1.414L13.414 12l5.793-5.793z" fill="#000" />
-                    </svg>
-                </div>
-
-                <h1 className="font-semibold text-sm">Filters</h1>
-    */
 
     return (
         <div className="h-screen">
