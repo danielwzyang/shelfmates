@@ -6,7 +6,7 @@ export interface filterProps {
 }
 
 export default function PriceFilter(props: filterProps) {
-    return <div className="border rounded-lg bg-white w-fit px-[10px] h-fit rounded-3xl flex flex-col justify-center items-center">
+    return <div className="border rounded-xl bg-white w-fit px-[10px] h-fit flex flex-col justify-center items-center">
         <div className="flex items-center py-[0.2rem]">
             <Slider
                 aria-label="a"

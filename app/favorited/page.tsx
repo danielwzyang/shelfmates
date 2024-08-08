@@ -89,7 +89,7 @@ export default function App() {
                             {productList}
                         </div>
                         :
-                        <h1 className="text-2xl w-fit absolute top-[50%] whitespace-pre-line">You have no favorites!</h1>
+                        <h1 className="text-2xl w-fit absolute top-[50%]">You have no favorites!</h1>
                 }
             </div>
         </div>

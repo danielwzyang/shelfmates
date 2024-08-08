@@ -20,8 +20,8 @@ export default function Dropdown(props: DropdownProps) {
     }
 
     return <div className="w-[8rem]" ref={ref}>
-        <div onClick={toggle} className="flex justify-center items-center gap-[0.3rem] px-[0.5rem] py-[0.2rem] border rounded-lg bg-white hover:bg-[#e6e6e6] text-base lg:text-sm sm:text-lg">
-            <h1 className="font-semibold">
+        <div onClick={toggle} className="flex justify-center items-center gap-[0.3rem] px-[0.5rem] py-[0.2rem] border rounded-xl bg-white hover:bg-[#e6e6e6]">
+            <h1 className="font-semibold  text-base lg:text-sm sm:text-lg">
                 {props.header}
             </h1>
             <svg className={"h-[1.25rem] scale-y-[" + (opened ? "-" : "") + "1]"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
