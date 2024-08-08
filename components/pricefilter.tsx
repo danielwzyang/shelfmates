@@ -11,7 +11,7 @@ export default function PriceFilter(props: filterProps) {
             <Slider
                 aria-label="a"
                 classNames={{
-                    base: "w-[150px] mr-[10px]",
+                    base: "w-[100px] mr-[10px]",
                     filler: "bg-black",
                     thumb: "bg-black",
                     track: "bg-[#dbdbdb] h-2"
