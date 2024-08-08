@@ -6,6 +6,7 @@ import products from "../../products.json" with { type: "json" }
 import { useEffect, useState } from "react"
 import Dropdown from "@/components/dropdown"
 import { useCookies } from "next-client-cookies"
+import PriceFilter from "@/components/pricefilter"
 
 export default function App() {
     var cookies = useCookies()
@@ -15,12 +16,13 @@ export default function App() {
     const [productList, changeList] = useState(favorited.map((e, i) => {
         return <Product id={e as keyof typeof products} key={i} />
     }))
+    const [priceFilter, changePriceFilter] = useState<number[]>([10, 20])
 
     useEffect(() => {
         changeList(favorited.sort(sortProducts).map((e, i) => {
             return <Product id={e as keyof typeof products} key={i} />
         }))
-    }, [sortBy])
+    }, [sortBy, priceFilter])
 
     function sortProducts(a: string, b: string) {
         switch (sortBy) {
@@ -69,20 +71,25 @@ export default function App() {
     }
 
     return (
-        <div>
+        <div className="h-screen">
             <Navbar page="favorited" />
-            <div className="w-full flex justify-center mt-[10px]">
-                <Dropdown header="Sort by:" list={["Recency", "Price (Low)", "Price (High)", "Rating", "# of Reviews"]} state={sortBy} func={changeSort} />
-            </div>
-            <div className="flex justify-center pb-[40px] min-h-full">
+            {
+                productList.length > 0 ?
+                    <div className="mt-[10px] flex w-fit gap-[10px] m-auto">
+                        <Dropdown header="Sort by:" list={["Amazon ID", "Price (Low)", "Price (High)", "Rating", "# of Reviews"]} state={sortBy} func={changeSort} />
+                        <PriceFilter priceFilter={priceFilter} changePriceFilter={changePriceFilter} />
+                    </div>
+                    :
+                    <div></div>
+            }
+            <div className="flex justify-center mx-auto">
                 {
                     productList.length > 0 ?
-                        (
-                            <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-                                {productList}
-                            </div>
-                        )
-                        : <h1 className="text-2xl w-fit mb-2 absolute top-[50%]">You have no favorites!</h1>
+                        <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                            {productList}
+                        </div>
+                        :
+                        <h1 className="text-2xl w-fit absolute top-[50%] whitespace-pre-line">You have no favorites!</h1>
                 }
             </div>
         </div>
