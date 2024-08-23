@@ -35,7 +35,7 @@ export default function Product(props: productProps) {
     return (
         <div>
             <ReactCardFlip isFlipped={isFlipped}>
-                <div {...bind} className="my-[10px] mx-[10px] 
+                <div {...bind} className="my-[6px] mx-[7.5px] 
         2xl:w-[250px] lg:w-[300px] md:w-[350px] sm:w-[400px] w-[350px]
         2xl:h-[350px] lg:h-[420px] md:h-[504px] sm:h-[576px] h-[504px]
         border border-[#e0e0e0] rounded-3xl flex-col justify-center bg-white">
@@ -69,7 +69,7 @@ export default function Product(props: productProps) {
                 </div>
 
 
-                <div {...bind} className="my-[10px] mx-[10px] 
+                <div {...bind} className="my-[6px] mx-[7.5px] 
         2xl:w-[250px] lg:w-[300px] md:w-[350px] sm:w-[400px] w-[350px]
         2xl:h-[350px] lg:h-[420px] md:h-[504px] sm:h-[576px] h-[504px]
         border border-[#e0e0e0] rounded-3xl flex items-center justify-center bg-white">

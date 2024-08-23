@@ -101,7 +101,7 @@ export default function App() {
     const rainbow = ["#ffadad", "#ffd6a5", "#fdffb6", "#caffbf", "#9bf6ff", "#a0c4ff", "#bdb2ff", "#ffc6ff"]
 
     return (
-        <div className="h-screen">
+        <div className="min-h-screen">
             <Navbar page="shop" />
             <div className="mt-[10px] flex-col w-fit m-auto">
                 <div className="flex gap-[10px] ">

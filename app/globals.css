@@ -3,33 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 24, 23, 26;
-  --background-start-rgb: 237, 233, 242;
-  --background-end-rgb: 237, 233, 242;
+    --foreground-rgb: 24, 23, 26;
+    --background-color: 237, 235, 245
 }
-
-/*
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-*/
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )   
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-color))
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
 }
