@@ -1,2 +1,3 @@
-daniel yang
-shelfmates
+# shelfmates
+
+full stack project
