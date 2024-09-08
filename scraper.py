@@ -51,11 +51,11 @@ while True:
 
             # looks for float dimensions
             match = re.search(
-                "Product Dimensions([\\d.]+) x ([\\d.]+) x ([\\d.]+) inches", dimensions)
+                "(?:Product|Package) Dimensions([\\d.]+) x ([\\d.]+) x ([\\d.]+) inches", dimensions)
             if not match:
                 # integer dimensions
                 match = re.search(
-                    "Product Dimensions\\s*(\\d+) x (\\d+) x (\\d+) inches", dimensions)
+                    "(?:Product|Package) Dimensions\\s*(\\d+) x (\\d+) x (\\d+) inches", dimensions)
             if match:
                 dimensions = [float(match.group(1)), float(
                     match.group(2)), float(match.group(3))]
@@ -76,7 +76,7 @@ while True:
         ## find number of reviews
         reviews = soup.find_all("span", id="acrCustomerReviewText")[0]
         if reviews:
-            reviews = int(reviews.get_text(strip=True)[:3])
+            reviews = int(re.search(r'\d+', reviews.get_text(strip=True)).group())
             print("\t\033[4mreviews\033[0m: " + str(reviews))
         else:
             print("reviews not found")
@@ -93,14 +93,15 @@ while True:
             "reviews": reviews,
             "image": image,
             "backimage": backimage,
-            "tags": [],
+            "tags": ["", "", ""],
             "link": url
         }
+
+        with open("products.json", "w") as f:
+            json.dump(data, f)
+            print("\nitem dumped")
+
     else:
         print("failed to get page")
 
-print(list(data.keys()))
-with open("products.json", "w") as f:
-    json.dump(data, f)
 
-print("data dumped")

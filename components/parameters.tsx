@@ -19,7 +19,7 @@ export default function Parameters(props: parametersProps) {
                 <Dropdown header="Sort by:" list={props.dropdownSelections} state={props.sortBy} func={props.changeSort} />
                 <PriceFilter priceFilter={props.priceFilter} changePriceFilter={props.changePriceFilter} />
             </div>
-            <div className="mt-[5px] gap-[5px] flex flex-wrap justify-center w-fit max-w-[80vw] m-auto">
+            <div className="mt-[5px] gap-[5px] flex flex-wrap justify-center w-[1000px] max-w-[80vw] m-auto">
                 {
                     tags.map((e, i) => {
                         return <Tag name={e} key={i} toggleTag={props.toggleTag} />

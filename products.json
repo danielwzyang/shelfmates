@@ -204,7 +204,9 @@
         "tags": [
             "cat",
             "chair",
-            "pink"
+            "pink",
+            "animal",
+            "white"
         ],
         "link": "https://amazon.com/dp/B0CM962613"
     },
@@ -224,7 +226,8 @@
             "frog",
             "chair",
             "brown",
-            "green"
+            "green",
+            "animal"
         ],
         "link": "https://amazon.com/dp/B0CM96VWY6"
     },
@@ -244,7 +247,8 @@
             "frog",
             "chair",
             "yellow",
-            "green"
+            "green",
+            "animal"
         ],
         "link": "https://www.amazon.com/dp/B0CM97X41K"
     },
@@ -263,7 +267,9 @@
         "tags": [
             "cat",
             "chair",
-            "red"
+            "red",
+            "animal",
+            "white"
         ],
         "link": "https://www.amazon.com/dp/B0CM96Z8ZW"
     },
@@ -283,7 +289,8 @@
             "frog",
             "chair",
             "red",
-            "green"
+            "green",
+            "animal"
         ],
         "link": "https://www.amazon.com/dp/B0CM95765J"
     },
@@ -302,7 +309,9 @@
         "tags": [
             "cat",
             "chair",
-            "yellow"
+            "yellow",
+            "animal",
+            "white"
         ],
         "link": "https://www.amazon.com/dp/B0CM97Z6D5"
     },
@@ -322,7 +331,8 @@
             "frog",
             "chair",
             "pink",
-            "green"
+            "green",
+            "animal"
         ],
         "link": "https://www.amazon.com/dp/B0CM9838TL"
     },
@@ -343,7 +353,7 @@
             "chair",
             "brown",
             "green",
-            "onigiri"
+            "animal"
         ],
         "link": "https://www.amazon.com/dp/B0CP68YNFS"
     },
@@ -364,7 +374,7 @@
             "chair",
             "yellow",
             "green",
-            "onigiri"
+            "animal"
         ],
         "link": "https://www.amazon.com/dp/B0CP693Z3J"
     },
@@ -385,8 +395,203 @@
             "chair",
             "red",
             "green",
-            "onigiri"
+            "animal"
         ],
         "link": "https://www.amazon.com/dp/B0CP66N8NJ"
+    },
+    "B0BQYLJFZ3": {
+        "name": "5pcs Cute Anime Figures Set, Cake Decoration, Mini Anime Figures, PVC Model Figures Collectible Toy Set, Plants, Car Decoration, Valentine's Day Gift (Color : B)",
+        "price": 12.99,
+        "dimensions": [
+            8.5,
+            3.94,
+            2.48
+        ],
+        "rating": 4.8,
+        "reviews": 15,
+        "image": "https://m.media-amazon.com/images/I/61wG0Dhe0sL._AC_SX679_.jpg",
+        "backimage": "https://m.media-amazon.com/images/I/612iFmP-hXL._AC_SX679_.jpg",
+        "tags": [
+            "sanrio",
+            "set"
+        ],
+        "link": "https://www.amazon.com/dp/B0BQYLJFZ3"
+    },
+    "B0BKZQ7LDK": {
+        "name": "Gonii 7Pcs Cute Anime Cake Topper Set, Kawaii Anime Figure,Anime Theme Party Decoration Supplies,Gift for Anime Fans or Friends",
+        "price": 9.99,
+        "dimensions": [
+            1.95,
+            0.19,
+            3.93
+        ],
+        "rating": 4.8,
+        "reviews": 319,
+        "image": "https://m.media-amazon.com/images/I/51Ql9z3N7dL._AC_SX679_.jpg",
+        "backimage": "https://m.media-amazon.com/images/I/61c79s9e2WL._AC_SX679_.jpg",
+        "tags": [
+            "sanrio",
+            "set"
+        ],
+        "link": "https://www.amazon.com/dp/B0BKZQ7LDK"
+    },
+    "B0BKT1MLN1": {
+        "name": "19 Pcs Miniature Figurines Toys Figure Animal Toys Set Cute Figurine Cake Toppers Mini Garden Miniature Figurines Landscape Decor for Home Desk Party Decorations (PVC,Pig)",
+        "price": 12.99,
+        "dimensions": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "rating": 4.6,
+        "reviews": 104,
+        "image": "https://m.media-amazon.com/images/I/61YarNyNE-L._AC_SX679_.jpg",
+        "backimage": "https://m.media-amazon.com/images/I/81pZtBIkCiL._AC_SX679_.jpg",
+        "tags": [
+            "pig",
+            "pink",
+            "animal",
+            "set"
+        ],
+        "link": "https://www.amazon.com/dp/B0BKT1MLN1"
+    },
+    "B0BKQKTH52": {
+        "name": "52TOYS Panda Roll Kindergarten Series, 1Pc Candybox Random Cute Popular Collectible Flocking Panda Figures Toys, Creative Panda Gift for Boy Girl Christmas Birthday Party Holiday",
+        "price": 13.99,
+        "dimensions": [
+            2.5,
+            2.5,
+            3.5
+        ],
+        "rating": 4.9,
+        "reviews": 15,
+        "image": "https://m.media-amazon.com/images/I/61VpPqaM7LL._AC_SX679_.jpg",
+        "backimage": "https://m.media-amazon.com/images/I/61xcGu6feWL._AC_SX679_.jpg",
+        "tags": [
+            "blind box",
+            "panda",
+            "white",
+            "animal"
+        ],
+        "link": "https://www.amazon.com/dp/B0BKQKTH52"
+    },
+    "B0D1XXMD6F": {
+        "name": "52TOYS Que Sera Modern Ancients ArtBonsai, Collectible Toy Kawaii Creative Gift Room Decor Desktop Decoration",
+        "price": 9.99,
+        "dimensions": [
+            2.56,
+            2.56,
+            4.06
+        ],
+        "rating": 4.4,
+        "reviews": 8,
+        "image": "https://m.media-amazon.com/images/I/71M35jTSQlL._AC_SX679_.jpg",
+        "backimage": "https://m.media-amazon.com/images/I/71vwcqOmH9L._AC_SX679_.jpg",
+        "tags": [
+            "plant",
+            "blind box",
+            "brown"
+        ],
+        "link": "https://www.amazon.com/dp/B0D1XXMD6F"
+    },
+    "B0CV54JRNC": {
+        "name": "52TOYS Vegetables Fairy 1st Action Figure, 1Pc Collectible Toy Kawaii Creative Gift Room Decor Desktop Decoration 3.5 Inch, Gift for Birthday Party",
+        "price": 15.99,
+        "dimensions": [
+            2.75,
+            2.56,
+            2.56
+        ],
+        "rating": 5.0,
+        "reviews": 4,
+        "image": "https://m.media-amazon.com/images/I/71R5qmFNkGL._AC_SX679_.jpg",
+        "backimage": "https://m.media-amazon.com/images/I/71e7cm9mliL._AC_SX679_.jpg",
+        "tags": [
+            "plant",
+            "vegetable",
+            "animal",
+            "blind box"
+        ],
+        "link": "https://www.amazon.com/dp/B0CV54JRNC"
+    },
+    "B0BKQHCW5V": {
+        "name": "52TOYS Candybox Various Panghu Series 2 Action Figure, Popular Collectible Art Toy Hot Tiger Toys Cute Figure Creative Gift, for Christmas Birthday Party Holiday",
+        "price": 13.88,
+        "dimensions": [
+            2.5,
+            2.5,
+            3.9
+        ],
+        "rating": 4.3,
+        "reviews": 23,
+        "image": "https://m.media-amazon.com/images/I/61+3vSaHhwL._AC_SX679_.jpg",
+        "backimage": "https://m.media-amazon.com/images/I/615bYKixCQL._AC_SX679_.jpg",
+        "tags": [
+            "animal",
+            "tiger",
+            "blind box",
+            "orange"
+        ],
+        "link": "https://www.amazon.com/dp/B0BKQHCW5V"
+    },
+    "B0D1G94BZC": {
+        "name": "BEEMAI Capybara Series 1PC Blind Box Figures, Random Design Cute Figures Collectible Toys Birthday Gifts",
+        "price": 11.65,
+        "dimensions": [
+            3.0,
+            2.0,
+            3.2
+        ],
+        "rating": 4.6,
+        "reviews": 11,
+        "image": "https://m.media-amazon.com/images/I/61IFgYVLTHL._AC_SX679_.jpg",
+        "backimage": "https://m.media-amazon.com/images/I/71asozgEzFL._AC_SX679_.jpg",
+        "tags": [
+            "capybara",
+            "blind box",
+            "brown",
+            "animal"
+        ],
+        "link": "https://www.amazon.com/dp/B0D1G94BZC"
+    },
+    "B0CRDZG5GQ": {
+        "name": "36 Pcs Mini Capybara Figures Playset Include 19 Simulation Capybara Model 15 Miniature Garden Accessories 1 French Fries Ornament 1 Egg Tart Ornament for Birthday Christmas Decorations Gifts",
+        "price": 19.99,
+        "dimensions": [
+            5.91,
+            5.91,
+            1.97
+        ],
+        "rating": 4.9,
+        "reviews": 11,
+        "image": "https://m.media-amazon.com/images/I/81H2vMoyEoL._AC_SX679_.jpg",
+        "backimage": "https://m.media-amazon.com/images/I/81m4ng+uSIL._AC_SX679_.jpg",
+        "tags": [
+            "set",
+            "animal",
+            "capybara",
+            "brown"
+        ],
+        "link": "https://www.amazon.com/dp/B0CRDZG5GQ"
+    },
+    "B0CXF5X32G": {
+        "name": "Lulu The Piggy Travel Series 1PC Cute Pig Blind Box Figures Collectible Toys Birthday Gift",
+        "price": 16.9,
+        "dimensions": [
+            2.6,
+            3.8,
+            2.6
+        ],
+        "rating": 4.3,
+        "reviews": 16,
+        "image": "https://m.media-amazon.com/images/I/71xoZ8zszPL._AC_SX679_.jpg",
+        "backimage": "https://m.media-amazon.com/images/I/71cGjfuKqDL._AC_SX679_.jpg",
+        "tags": [
+            "animal",
+            "pig",
+            "blind box",
+            "pink"
+        ],
+        "link": "https://www.amazon.com/dp/B0CXF5X32G"
     }
 }
