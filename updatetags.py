@@ -10,7 +10,9 @@ for key in data.keys():
         if tag not in tags:
             tags.append(tag)
 
+tags.sort()
+
 with open("tags.json", "w") as f:
     json.dump(tags, f)
 
-print("\ntags dumped")
+print("\ntags dumped\n")

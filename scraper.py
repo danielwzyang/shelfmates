@@ -93,6 +93,8 @@ while True:
             "reviews": reviews,
             "image": image,
             "backimage": backimage,
+            "tags": [],
+            "link": url
         }
     else:
         print("failed to get page")

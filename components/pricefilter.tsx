@@ -36,7 +36,7 @@ export default function PriceFilter(props: filterProps) {
                         ],
                     },
                 }}
-                step={1} minValue={5} maxValue={25} defaultValue={[5, 25]} onChangeEnd={(value) => { props.changePriceFilter(typeof value == "number" ? [value, value] : value) }} />
+                step={1} minValue={5} maxValue={25} defaultValue={props.priceFilter} onChangeEnd={(value) => { props.changePriceFilter(typeof value == "number" ? [value, value] : value) }} />
             <h1 className="whitespace-nowrap font-semibold text-base lg:text-sm sm:text-lg">
                 {props.priceFilter[0] != props.priceFilter[1] ? "$" + props.priceFilter[0] + " - $" + props.priceFilter[1] : "$" + props.priceFilter[0]}
             </h1>
